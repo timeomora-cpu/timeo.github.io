@@ -1,0 +1,236 @@
+/* ===== STYLE.CSS - Portfolio BTS SIO SLAM ===== */
+/* Styles communs aux deux pages */
+
+/* ----- VARIABLES & BASE ----- */
+:root {
+    --primary: #667eea;
+    --secondary: #764ba2;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-light: #f9fafb;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+/* ----- UTILITAIRES ----- */
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ----- COMPOSANTS COMMUNS ----- */
+/* Navigation */
+.navbar {
+    position: fixed;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 50;
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Liens navigation desktop */
+.nav-links {
+    display: none;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--secondary);
+}
+
+.nav-links a.active {
+    font-weight: 600;
+}
+
+.btn-contact {
+    background: var(--secondary);
+    color: var(--white) !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 9999px;
+}
+
+.btn-contact:hover {
+    background: #6b3fa0;
+}
+
+/* Menu mobile */
+.menu-btn {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+.menu-mobile {
+    display: none;
+    background: var(--white);
+    border-top: 1px solid #e5e7eb;
+}
+
+.menu-mobile a {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+.menu-mobile a.active {
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: var(--secondary);
+    color: var(--white);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-primary:hover {
+    background: #6b3fa0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.btn-outline {
+    background: var(--white);
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+}
+
+.btn-outline:hover {
+    background: #f5f0ff;
+    transform: translateY(-2px);
+}
+
+/* Cards */
+.skill-card,
+.project-card {
+    background: var(--white);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover,
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Tags techniques */
+.tech-tag {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: transform 0.2s;
+}
+
+.tech-tag:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    background: #111827;
+    color: var(--white);
+    padding: 2rem 0;
+}
+
+.footer-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-links a {
+    color: #9ca3af;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+/* ----- MEDIA QUERIES ----- */
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .menu-btn {
+        display: none;
+    }
+    
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
